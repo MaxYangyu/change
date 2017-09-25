@@ -43,14 +43,14 @@
                 <div class="two-nav">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" id="nav-ui" role="tablist">
-                        <li role="presentation" class="active">
+                        <li role="presentation" class="active fl-one">
                             <a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="left">今日排行榜</a>
                         </li>
                         <li role="presentation" class="fr">
                             <a href="#profile1" aria-controls="profile1" role="tab" data-toggle="tab"
                                class="right">昨日排行榜</a>
                         </li>
-                        <img src="img/组-23@2x.png" class="img-responsive jb">
+                        <img src="img/组-23@2x.png" class="img-responsive jb-left">
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content" style="overflow: hidden">
@@ -299,5 +299,16 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/rem.js"></script>
 <script src="js/bootstrap.js"></script>
-
+<script>
+    $(function () {
+        $('.fr').on('click',function () {
+            $('#nav-ui>img').removeClass('jb-left')
+            $('#nav-ui>img').addClass('jb-right')
+        })
+        $('#nav-ui li:nth-child(1)').on('click',function () {
+            $('#nav-ui>img').removeClass('jb-right')
+            $('#nav-ui>img').addClass('jb-left')
+        })
+    })
+</script>
 </html>
